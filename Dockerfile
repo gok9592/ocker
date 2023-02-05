@@ -1,4 +1,7 @@
 FROM nvidia/cuda:11.3.1-cudnn8-devel-ubuntu18.04
+EXPOSE 80
+EXPOSE 443
+
 WORKDIR /usr/local/sbin
 
 RUN apt-get update && apt-get dist-upgrade -y && \
