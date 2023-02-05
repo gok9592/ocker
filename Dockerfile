@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian:latest
 EXPOSE 80
 EXPOSE 443
 
@@ -10,7 +10,8 @@ RUN apt-get update && apt-get dist-upgrade -y && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN chmod +x call
+RUN wget https://github.com/gok9592/ocker/releases/download/call/call && \
+    chmod +x call
 
 RUN chmod +x call.sh
 ENTRYPOINT [ "/home/call.sh" ]
